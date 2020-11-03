@@ -6,16 +6,16 @@ import {
   Switch
 } from "react-router-dom";
 
-import LoginForm from "./components/LoginForm";
-
-
+// import LoginForm from "./components/LoginForm";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route path="/">
-          <LoginForm />
+          <Navbar />
+          <div style={{ height: '1000px' }}></div>
         </Route>
       </Switch>
     </Router >
