@@ -15,99 +15,11 @@ import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
 import ExploreOutlinedIcon from '@material-ui/icons/ExploreOutlined';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteBorder';
 
-const theme = createMuiTheme({
-    palette: {
-        primary: {
-            light: '#FAFAFA',
-            main: '#DBDBDB',
-            dark: '#A5A7AA',
-        },
-    }
-})
-
-const useStyles = makeStyles({
-    container: {
-        height: 54,
-        width: '100%',
-        display: 'flex',
-        backgroundColor: 'white',
-        justifyContent: 'center',
-        borderBottom: '1px solid',
-    },
-    center: {
-        width: '100%',
-        display: 'flex',
-        maxWidth: 935,
-        padding: '0px 20px',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-    },
-    logoWrapper: {
-        display: 'flex',
-        flexGrow: 1,
-        alignItems: 'center',
-    },
-    searchWrapper: {
-        display: 'flex',
-        height: 16,
-        width: 125,
-        minWidth: 215,
-        fontSize: 16,
-        padding: '5px 10px',
-        borderRadius: 5,
-        border: '1px solid',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        backgroundColor: theme.palette.primary.light,
-    },
-    searchIcon: {
-        fontSize: 16,
-        color: theme.palette.primary.dark,
-    },
-    input: {
-        fontSize: 13,
-    },
-    inputCover: {
-        top: 0,
-        left: 0,
-        zIndex: 2,
-        width: '100%',
-        position: 'absolte',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontSize: 13,
-        cursor: 'text',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-    },
-    iconWraper: {
-        display: 'flex',
-        fontSize: 22,
-        flexGrow: 1,
-        justifyContent: 'flex-end',
-    },
-    iconGroup: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    etcIcon: {
-        fontSize: 25,
-        marginLeft: 20,
-        cursor: 'pointer',
-    },
-    profileIcon: {
-        width: 23,
-        height: 23,
-        marginLeft: 20,
-    }
-});
-
 export default function Navbar() {
-    const [searching, setSearching] = useState(false)
-    const classes = useStyles(searching);
-
     const [icon, setIcon] = useState(0)
+    const [searching, setSearching] = useState(false)
+
+    const classes = useStyles(searching);
 
     const search = searching
         ? <React.Fragment>
@@ -159,7 +71,9 @@ export default function Navbar() {
                                     : <FavoriteOutlinedIcon className={classes.etcIcon} onClick={() => setIcon(3)} />
                             }
 
-                            <Avatar className={classes.profileIcon} src='https://instagram.fbkk7-2.fna.fbcdn.net/v/t51.2885-19/s150x150/83145213_207820283683810_6839710134407528448_n.jpg?_nc_ht=instagram.fbkk7-2.fna.fbcdn.net&_nc_ohc=L7y7AB8e1UgAX_Qs9Wm&oh=ca9d55f90476b941517f78b53c8035cf&oe=5FCDFDDB' />
+                            <a href="/#">
+                                <Avatar className={classes.profileIcon} src='https://instagram.fbkk7-2.fna.fbcdn.net/v/t51.2885-19/s150x150/83145213_207820283683810_6839710134407528448_n.jpg?_nc_ht=instagram.fbkk7-2.fna.fbcdn.net&_nc_ohc=L7y7AB8e1UgAX_Qs9Wm&oh=ca9d55f90476b941517f78b53c8035cf&oe=5FCDFDDB' />
+                            </a>
                         </Box>
                     </Box>
                 </Box>
@@ -167,3 +81,95 @@ export default function Navbar() {
         </MuiThemeProvider>
     )
 }
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            light: '#FAFAFA',
+            main: '#DBDBDB',
+            dark: '#A5A7AA',
+        },
+    }
+})
+
+const useStyles = makeStyles({
+    container: {
+        height: 54,
+        width: '100%',
+        top: 0,
+        left: 0,
+        zIndex: 10,
+        position: 'sticky',
+        display: 'flex',
+        backgroundColor: 'white',
+        justifyContent: 'center',
+        borderBottom: '1px solid',
+    },
+    center: {
+        width: '100%',
+        display: 'flex',
+        maxWidth: 935,
+        padding: '0px 20px',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+    logoWrapper: {
+        display: 'flex',
+        flex: '1 0 0%',
+        alignItems: 'center',
+    },
+    searchWrapper: {
+        display: 'flex',
+        height: 16,
+        width: 125,
+        minWidth: 193,
+        fontSize: 16,
+        padding: '5px 10px',
+        borderRadius: 5,
+        border: '1px solid',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        backgroundColor: theme.palette.primary.light,
+    },
+    searchIcon: {
+        fontSize: 16,
+        color: theme.palette.primary.dark,
+    },
+    input: {
+        fontSize: 13,
+    },
+    inputCover: {
+        top: 0,
+        left: 0,
+        zIndex: 2,
+        width: '100%',
+        position: 'absolte',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 13,
+        cursor: 'text',
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    },
+    iconWraper: {
+        display: 'flex',
+        fontSize: 22,
+        flex: '1 0 0%',
+        justifyContent: 'flex-end',
+    },
+    iconGroup: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    etcIcon: {
+        fontSize: 25,
+        marginLeft: 20,
+        cursor: 'pointer',
+    },
+    profileIcon: {
+        width: 23,
+        height: 23,
+        marginLeft: 20,
+    }
+});

@@ -6,20 +6,20 @@ import {
   Switch
 } from "react-router-dom";
 
-// import LoginForm from "./components/LoginForm";
 import Navbar from "./components/Navbar";
+import NewsFeed from "./components/NewsFeed";
 
-function App() {
+
+export default function App() {
   return (
     <Router>
       <Switch>
         <Route path="/">
           <Navbar />
-          <div style={{ height: '1000px' }}></div>
+          <NewsFeed />
+          <div style={{ height: 2000 }} />
         </Route>
       </Switch>
     </Router >
   );
 }
-
-export default App;
