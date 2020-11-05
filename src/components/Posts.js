@@ -1,11 +1,68 @@
 import React from 'react'
+import Post from './Post'
+import { makeStyles } from '@material-ui/core'
 
-function Posts() {
+export default function Posts() {
+    const classes = useStyle();
     return (
-        <div>
-
+        <div className={classes.wrapper}>
+            {
+                posts.map((post, index) =>
+                    <Post post={post} index={index} />
+                )
+            }
         </div>
     )
 }
 
-export default Posts
+const useStyle = makeStyles(() => ({
+    wrapper: {
+        marginTop: 24,
+        display: 'flex',
+        flexDirection: 'column',
+    },
+}))
+
+const posts = [
+    {
+        user: {
+            name: 'EIEI',
+            url: 'https://picsum.photos/432/768/?random=',
+        },
+        post: {
+            url: [],
+            location: '',
+            caption: '',
+            likes: '',
+        },
+        comments: [
+            {
+                user: '',
+                comment: '',
+            }, {
+                user: '',
+                comment: '',
+            },
+        ]
+    },
+    // {
+    //     user: {
+    //         name: '',
+    //         url: '',
+    //     },
+    //     post: {
+    //         url: [],
+    //         caption: '',
+    //         likes: '',
+    //     },
+    //     comments: [
+    //         {
+    //             user: '',
+    //             comment: '',
+    //         }, {
+    //             user: '',
+    //             comment: '',
+    //         },
+    //     ]
+    // },
+]
