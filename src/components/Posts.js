@@ -26,7 +26,7 @@ const useStyle = makeStyles(() => ({
 const posts = [
     {
         user: {
-            name: 'EIEI',
+            name: 'iam_supaz',
             url: 'https://picsum.photos/432/768/?random=',
         },
         post: {
