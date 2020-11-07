@@ -1,16 +1,221 @@
 import React from 'react'
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import { Avatar, Box, Link, makeStyles } from '@material-ui/core'
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import Comment from './Comment'
+import { Slider, Slide, ButtonBack, ButtonNext, CarouselProvider, Image } from 'pure-react-carousel';
+import { BookmarkBorderOutlined, ChatBubbleOutline, FavoriteBorder, SendOutlined } from '@material-ui/icons';
 
-function Post() {
+export default function Post(props) {
+    const classes = useStyle();
     return (
-        <div>
-            {/* Header -> avatar + name + ... */}
-            {/* Picture + tag*/}
-            {/* Action bar -> like + comment + share + bookmark */}
-            {/* Who liked */}
-            {/* Comment -> name + comment + like */}
-            {/* Add a comment  */}
-        </div>
+        <Box className={classes.root}>
+            <Box className={classes.headerWrapper}>
+                <Link component='button' rel="noreferrer" className={classes.profileBorder}>
+                    <Avatar className={classes.profileImg} src={`${props.post.user.url}${props.index}`} />
+                </Link>
+                <Link component='button' className={classes.username}>
+                    <Box>
+                        lllukkeddd
+                        </Box>
+                </Link>
+                <Link component='button' className={classes.ellipsis}>
+                    <MoreHorizIcon />
+                </Link>
+            </Box>
+
+            <Box className={classes.mediaWrapper}>
+                <CarouselProvider
+                    naturalSlideWidth={100}
+                    naturalSlideHeight={100}
+                    totalSlides={3}
+                    dragEnabled={false}
+                    touchEnabled={false}
+                >
+                    <Slider>
+                        {
+                            props.post.post.url.map((url, index) =>
+                                <Slide index={index} key={`post-media-${index}`}>
+                                    <Image className={classes.media} src={`${url + index}`} alt={`${url + index}`} />
+                                </Slide>
+                            )
+                        }
+                    </Slider>
+                    <Box className={classes.buttonWrapper}>
+                        <ButtonBack
+                            className={classes.carouselButton}
+                            style={{ left: 0 }}
+                            children={<ArrowBackIosIcon style={{ fontSize: 20, transform: 'translateX(4px)' }} />}
+                        />
+                        <ButtonNext
+                            className={classes.carouselButton}
+                            style={{ right: 0 }}
+                            children={<ArrowForwardIosIcon style={{ fontSize: 20, transform: 'translateX(2px)' }} />}
+                        />
+                    </Box>
+                </CarouselProvider>
+            </Box>
+
+            <Box>
+                <Box className={classes.actionBar}>
+                    <Box style={{ display: 'flex' }}>
+                        <a href="/#" className={classes.link}>
+                            <FavoriteBorder className={classes.icon} />
+                        </a>
+                        <a href="/#" className={classes.link}>
+                            <ChatBubbleOutline className={classes.icon} />
+                        </a>
+                        <a href="/#" className={classes.link}>
+                            <SendOutlined className={classes.icon} />
+                        </a>
+                    </Box>
+                    <a href="/#" className={classes.link}>
+                        <BookmarkBorderOutlined className={classes.icon} />
+                    </a>
+                </Box>
+                <Box className={classes.likes}>
+                    {props.post.post.likes} likes
+                </Box>
+                <Box className={classes.caption}>
+                    <Box style={{ fontWeight: 'bolder' }}>
+                        {props.post.user.name}
+                    </Box>
+                    <Box style={{ marginLeft: 5 }}>
+                        {props.post.post.caption}
+                    </Box>
+                </Box>
+                <Box className={classes.time}>
+                    <Box>
+                        {props.post.post.time}
+                    </Box>
+                </Box>
+            </Box>
+            <Comment />
+        </Box >
     )
 }
 
-export default Post
+const useStyle = makeStyles(() => ({
+    root: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+
+        border: '1px solid',
+        borderColor: '#DBDBDB',
+        backgroundColor: 'white',
+        color: 'black',
+        fontFamily: '"Roboto", sans-serif',
+    },
+    link: {
+        color: 'black',
+        textDecoration: 'none',
+    },
+    // Header
+    headerWrapper: {
+        height: 28,
+        padding: 16,
+        display: 'flex',
+        alignItems: 'center',
+        position: 'relative'
+    },
+    profileBorder: {
+        width: 40,
+        height: 40,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: '50%',
+        textDecoration: 'none',
+        background: 'linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)',
+    },
+    profileImg: {
+        width: 32,
+        height: 32,
+        margin: 0,
+        borderRadius: '50%',
+        border: '2px solid white'
+    },
+    username: {
+        display: 'flex',
+        fontSize: 14,
+        marginLeft: 14,
+        fontWeight: 600,
+        alignItems: 'center',
+        color: 'inherit',
+        textOverflow: 'ellipsis',
+    },
+    ellipsis: {
+        right: 14,
+        fontSize: 10,
+        display: 'flex',
+        color: 'inherit',
+        position: 'absolute',
+    },
+    // Media
+    mediaWrapper: {
+        position: 'relative'
+    },
+    media: {
+        width: '100%',
+        objectFit: 'cover',
+    },
+    buttonWrapper: {
+        left: '1%',
+        width: '98%',
+        position: 'absolute',
+        display: 'flex',
+        top: '50%',
+        transform: 'translateY(-15px)',
+        justifyContent: 'space-between',
+    },
+    carouselButton: {
+        width: 30,
+        height: 30,
+        borderRadius: '50%',
+        position: 'absolute',
+        border: 0,
+        outline: 'none',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '1px 1px 2px #000000'
+    },
+
+    // Action bar
+    actionBar: {
+        height: 40,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '0px 0px 0px 16px',
+    },
+    icon: {
+        fontWeight: '300',
+        fontSize: 30,
+        display: 'flex',
+        marginRight: 16,
+    },
+    likes: {
+        height: 20,
+        fontSize: 14,
+        paddingLeft: 18,
+        marginBottom: 10,
+        lineHeight: '20px',
+        fontWeight: 'bolder',
+    },
+    caption: {
+        fontSize: 14,
+        paddingLeft: 18,
+        marginBottom: 10,
+        display: 'flex',
+        flexDirection: 'row',
+    },
+    time: {
+        fontSize: 11,
+        color: '#8e8e8e',
+        marginLeft: 18,
+        marginBottom: 10,
+    },
+}))

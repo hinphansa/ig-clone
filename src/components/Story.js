@@ -1,18 +1,18 @@
 import React from 'react'
-import { Avatar, makeStyles } from '@material-ui/core'
+import { Avatar, Box, makeStyles } from '@material-ui/core'
 
 
 export default function Story(props) {
     const classes = useStyles();
     return (
-        <div className={classes.thumbnailStory}>
-            <div className={classes.gradientBorder} >
+        <Box className={classes.thumbnailStory}>
+            <Box className={classes.gradientBorder} >
                 <Avatar className={classes.avatar} src={`${props.user.url}${props.index}`} />
-            </div>
-            <div className={classes.text}>
+            </Box>
+            <Box className={classes.text}>
                 {props.user.name}
-            </div>
-        </div>
+            </Box>
+        </Box>
     )
 }
 

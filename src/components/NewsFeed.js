@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, createMuiTheme, styled } from '@material-ui/core'
 import { ThemeProvider } from 'styled-components'
 import Stories from './Stories'
+import Posts from './Posts'
 
 
 const theme = createMuiTheme({
@@ -21,6 +22,7 @@ export default function NewsFeed() {
                 <FeedWrapper>
                     <LeftColumn>
                         <Stories />
+                        <Posts />
                     </LeftColumn>
                 </FeedWrapper>
             </MainContent>
