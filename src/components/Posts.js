@@ -8,7 +8,7 @@ export default function Posts() {
         <div className={classes.wrapper}>
             {
                 posts.map((post, index) =>
-                    <Post post={post} index={index} />
+                    <Post key={`post-${index}`} post={post} index={index} />
                 )
             }
         </div>
@@ -26,24 +26,20 @@ const useStyle = makeStyles(() => ({
 const posts = [
     {
         user: {
-            name: 'iam_supaz',
+            name: 'lllukkeddd',
             url: 'https://picsum.photos/432/768/?random=',
         },
         post: {
-            url: [],
-            location: '',
-            caption: '',
-            likes: '',
+            url: [
+                'https://picsum.photos/300/400/?random=',
+                'https://picsum.photos/600/400/?random=',
+                'https://picsum.photos/600/400/?random=',
+            ],
+            location: 'eiei',
+            caption: 'Lovely',
+            likes: 112,
+            time: '8 HOURS AGO',
         },
-        comments: [
-            {
-                user: '',
-                comment: '',
-            }, {
-                user: '',
-                comment: '',
-            },
-        ]
     },
     // {
     //     user: {

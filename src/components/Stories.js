@@ -10,16 +10,18 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 
 export default function Stories() {
     const classes = useStyles();
+    const totalSlides = Math.round(((users.length / 7) * 100)) / 100
 
     return (
         <StoriesWrapper>
             <CarouselProvider
                 naturalSlideWidth={100}
                 naturalSlideHeight={15}
-                totalSlides={users.length / 7}
+                totalSlides={totalSlides}
                 step={1}
+                style={{ position: 'relative' }}
             >
-                <Slider style={{ width: `${users.length * 80 + 10}`, outline: 'none', paddingLeft: 10 }}>
+                <Slider style={{ width: `${users.length * 80}`, outline: 'none', paddingLeft: 5 }}>
                     {
                         users.map((user, index) =>
                             <Slide index={index} key={`slide-${index}`} style={{ width: 80, margin: '0px 3px' }}>
@@ -30,17 +32,18 @@ export default function Stories() {
                         )
                     }
                 </Slider>
-
                 <div className={classes.miniButtonWrapper}>
                     <ButtonBack
                         className={classes.miniCarouselButton}
                         style={{ left: 0 }}
-                        children={<ArrowBackIosIcon className={classes.logo} style={{ transform: 'translateX(3px)' }} />}
+                        children={<ArrowBackIosIcon style={{ fontSize: 15, transform: 'translateX(3px)' }} />}
                     />
                     <ButtonNext
                         className={classes.miniCarouselButton}
                         style={{ right: 0 }}
-                        children={<ArrowForwardIosIcon className={classes.logo} style={{ transform: 'translateX(2px)' }} />} />
+                        children={<ArrowForwardIosIcon style={{ fontSize: 15, transform: 'translateX(2px)' }} />}
+
+                    />
                 </div>
             </CarouselProvider>
         </StoriesWrapper >
@@ -49,7 +52,7 @@ export default function Stories() {
 
 const StoriesWrapper = styled(Box)({
     height: 84,
-    width: '100%',
+    width: '612',
     borderRadius: 3,
     padding: '16px 0px',
     overflowY: 'hidden',
@@ -73,27 +76,24 @@ const useStyles = makeStyles(() => ({
     },
     miniButtonWrapper: {
         left: '1%',
-        position: 'relative',
         width: '98%',
+        position: 'absolute',
         display: 'flex',
-        transform: 'translateY(-58px)',
+        top: '50%',
+        transform: 'translateY(-10px)',
         justifyContent: 'space-between',
     },
     miniCarouselButton: {
         width: 20,
         height: 20,
         borderRadius: '50%',
-        border: 0,
         position: 'absolute',
+        border: 0,
         outline: 'none',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         boxShadow: '1px 1px 2px #000000'
-    },
-    logo: {
-        fontSize: 15,
-        display: 'block ',
     },
 }))
 

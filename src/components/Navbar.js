@@ -30,7 +30,7 @@ export default function Navbar() {
         : <div className={classes.inputCover} onClick={() => setSearching(!searching)}>
             <div style={{ display: 'flex' }}>
                 <SearchIcon className={classes.searchIcon} />
-                <div style={{ marginLeft: 5, color: `${theme.palette.primary.dark}` }}>Search</div>
+                <div style={{ marginLeft: 5, marginRight: 15, color: `${theme.palette.primary.dark}` }}>Search</div>
             </div>
         </div>
 
@@ -81,7 +81,6 @@ export default function Navbar() {
         </MuiThemeProvider>
     )
 }
-
 const theme = createMuiTheme({
     palette: {
         primary: {
@@ -130,6 +129,9 @@ const useStyles = makeStyles({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: theme.palette.primary.light,
+        [theme.breakpoints.down('sm')]: {
+            display: 'none',
+        },
     },
     searchIcon: {
         fontSize: 16,
