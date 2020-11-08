@@ -3,6 +3,7 @@ import { Box, createMuiTheme, styled } from '@material-ui/core'
 import { ThemeProvider } from 'styled-components'
 import Stories from './Stories'
 import Posts from './Posts'
+import Suggestions from './Suggestions'
 
 
 const theme = createMuiTheme({
@@ -24,6 +25,7 @@ export default function NewsFeed() {
                         <Stories />
                         <Posts />
                     </LeftColumn>
+                    <Suggestions />
                 </FeedWrapper>
             </MainContent>
         </ThemeProvider>
@@ -37,13 +39,15 @@ const MainContent = styled(Box)({
 })
 
 const FeedWrapper = styled(Box)({
-    height: 300,
     width: '100%',
     maxWidth: 935,
     paddingTop: 30,
+    display: 'flex',
+    position: 'relative',
     [theme.breakpoints.down('sm')]: {
         maxWidth: 600,
         paddingTop: 30,
+        display: 'block',
         justifyContent: 'center',
     },
 })
