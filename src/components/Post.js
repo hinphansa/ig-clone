@@ -5,7 +5,7 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Comment from './Comment'
 import { Slider, Slide, ButtonBack, ButtonNext, CarouselProvider, Image } from 'pure-react-carousel';
-import { BookmarkBorderOutlined, ChatBubbleOutline, FavoriteBorder, SendOutlined } from '@material-ui/icons';
+import PostAction from './PostAction';
 
 export default function Post(props) {
     const classes = useStyle();
@@ -17,8 +17,8 @@ export default function Post(props) {
                 </Link>
                 <Link component='button' className={classes.username}>
                     <Box>
-                        lllukkeddd
-                        </Box>
+                        {props.post.user.name}
+                    </Box>
                 </Link>
                 <Link component='button' className={classes.ellipsis}>
                     <MoreHorizIcon />
@@ -58,21 +58,8 @@ export default function Post(props) {
             </Box>
 
             <Box>
-                <Box className={classes.actionBar}>
-                    <Box style={{ display: 'flex' }}>
-                        <a href="/#" className={classes.link}>
-                            <FavoriteBorder className={classes.icon} />
-                        </a>
-                        <a href="/#" className={classes.link}>
-                            <ChatBubbleOutline className={classes.icon} />
-                        </a>
-                        <a href="/#" className={classes.link}>
-                            <SendOutlined className={classes.icon} />
-                        </a>
-                    </Box>
-                    <a href="/#" className={classes.link}>
-                        <BookmarkBorderOutlined className={classes.icon} />
-                    </a>
+                <Box>
+                    <PostAction />
                 </Box>
                 <Box className={classes.likes}>
                     {props.post.post.likes} likes
@@ -98,11 +85,14 @@ export default function Post(props) {
 
 const useStyle = makeStyles(() => ({
     root: {
+        height: 850,
         display: 'flex',
+        marginBottom: 30,
         flexDirection: 'column',
         justifyContent: 'center',
 
         border: '1px solid',
+        borderRadius: 3,
         borderColor: '#DBDBDB',
         backgroundColor: 'white',
         color: 'black',
@@ -116,6 +106,7 @@ const useStyle = makeStyles(() => ({
     headerWrapper: {
         height: 28,
         padding: 16,
+        borderBottom: '1px solid #DBDBDB',
         display: 'flex',
         alignItems: 'center',
         position: 'relative'
@@ -184,24 +175,12 @@ const useStyle = makeStyles(() => ({
     },
 
     // Action bar
-    actionBar: {
-        height: 40,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: '0px 0px 0px 16px',
-    },
-    icon: {
-        fontWeight: '300',
-        fontSize: 30,
-        display: 'flex',
-        marginRight: 16,
-    },
     likes: {
         height: 20,
         fontSize: 14,
         paddingLeft: 18,
-        marginBottom: 10,
+        marginTop: 5,
+        marginBottom: 5,
         lineHeight: '20px',
         fontWeight: 'bolder',
     },
