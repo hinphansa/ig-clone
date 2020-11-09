@@ -1,5 +1,6 @@
 import React from 'react'
 import Post from './Post'
+import posts from './mockup'
 import { makeStyles } from '@material-ui/core'
 
 export default function Posts() {
@@ -22,87 +23,3 @@ const useStyle = makeStyles(() => ({
         flexDirection: 'column',
     },
 }))
-
-const posts = [
-    {
-        user: {
-            name: 'lllukkeddd',
-            url: 'https://picsum.photos/432/768/?random=',
-        },
-        post: {
-            url: [
-                'https://picsum.photos/600/700/?random=',
-                'https://picsum.photos/600/700/?random=',
-                'https://picsum.photos/600/700/?random=',
-            ],
-            location: 'eiei',
-            caption: 'Lovely',
-            likes: 112,
-            time: '8 HOURS AGO',
-        },
-    }, {
-        user: {
-            name: 'asdasd',
-            url: 'https://picsum.photos/432/768/?random=',
-        },
-        post: {
-            url: [
-                'https://picsum.photos/600/700/?random=',
-                'https://picsum.photos/600/700/?random=',
-                'https://picsum.photos/600/700/?random=',
-            ],
-            location: 'eiei',
-            caption: 'Lovely',
-            likes: 112,
-            time: '8 HOURS AGO',
-        },
-    }, {
-        user: {
-            name: 'lllukkeddd',
-            url: 'https://picsum.photos/432/768/?random=',
-        },
-        post: {
-            url: [
-                'https://picsum.photos/600/600/?random=',
-                'https://picsum.photos/600/600/?random=',
-                'https://picsum.photos/600/600/?random=',
-            ],
-            location: 'eiei',
-            caption: 'Lovely',
-            likes: 112,
-            time: '8 HOURS AGO',
-        },
-    }, {
-        user: {
-            name: 'lllukkeddd',
-            url: 'https://picsum.photos/432/768/?random=',
-        },
-        post: {
-            url: [
-                'https://picsum.photos/600/700/?random=',
-                'https://picsum.photos/600/700/?random=',
-                'https://picsum.photos/600/700/?random=',
-            ],
-            location: 'eiei',
-            caption: 'Lovely',
-            likes: 112,
-            time: '8 HOURS AGO',
-        },
-    }, {
-        user: {
-            name: 'lllukkeddd',
-            url: 'https://picsum.photos/432/768/?random=',
-        },
-        post: {
-            url: [
-                'https://picsum.photos/600/600/?random=',
-                'https://picsum.photos/600/600/?random=',
-                'https://picsum.photos/600/600/?random=',
-            ],
-            location: 'eiei',
-            caption: 'Lovely',
-            likes: 112,
-            time: '8 HOURS AGO',
-        },
-    },
-]

@@ -1,9 +1,9 @@
 import React from 'react'
-import { Box, createMuiTheme, styled } from '@material-ui/core'
-import { ThemeProvider } from 'styled-components'
-import Stories from './stories/Stories'
 import Posts from './posts/Posts'
+import Stories from './stories/Stories'
+import { ThemeProvider } from 'styled-components'
 import Suggestions from './suggestions/Suggestions'
+import { Box, createMuiTheme, styled } from '@material-ui/core'
 
 
 const theme = createMuiTheme({

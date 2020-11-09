@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Story from './Story'
+import stories from './mockup'
 import { Box, makeStyles, styled } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
@@ -10,7 +11,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 
 export default function Stories() {
     const classes = useStyles();
-    const totalSlides = Math.round(((users.length / 7) * 100)) / 100
+    const totalSlides = Math.round(((stories.length / 7) * 100)) / 100
 
     return (
         <StoriesWrapper>
@@ -21,9 +22,9 @@ export default function Stories() {
                 step={1}
                 style={{ position: 'relative' }}
             >
-                <Slider style={{ width: `${users.length * 80}`, outline: 'none', paddingLeft: 5 }}>
+                <Slider style={{ width: `${stories.length * 80}`, outline: 'none', paddingLeft: 5 }}>
                     {
-                        users.map((user, index) =>
+                        stories.map((user, index) =>
                             <Slide index={index} key={`slide-${index}`} style={{ width: 80, margin: '0px 3px' }}>
                                 <a href="/#" style={{ textDecoration: 'none' }} >
                                     <Story user={user} index={index} />
@@ -96,85 +97,3 @@ const useStyles = makeStyles(() => ({
         boxShadow: '1px 1px 2px #000000'
     },
 }))
-
-const users = [
-    {
-        name: 'Hideousplay',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Hibbert',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Jevan ',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Keith',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Odling',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Footballers',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Monica ',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Rock ',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Goats',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Nefandous ',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Grotesque',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Nicole',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Jama',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'nova',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'N.C',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Nicolekitten',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'N.J',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Manson ',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'J.H. Charles',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'AitchEnEnWhy',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Real ',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Johnnya ',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Abs-Sweet',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Johnnyormous ',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Tawny',
-        url: 'https://picsum.photos/100/100/?random='
-    }, {
-        name: 'Flip',
-        url: 'https://picsum.photos/100/100/?random='
-    },
-]

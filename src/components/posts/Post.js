@@ -1,11 +1,11 @@
 import React from 'react'
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import Comment from './Comment'
+import PostAction from './PostAction';
 import { Avatar, Box, Link, makeStyles } from '@material-ui/core'
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import Comment from './Comment'
 import { Slider, Slide, ButtonBack, ButtonNext, CarouselProvider, Image } from 'pure-react-carousel';
-import PostAction from './PostAction';
 
 export default function Post(props) {
     const classes = useStyle();

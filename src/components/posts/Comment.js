@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Box, Button, InputBase } from '@material-ui/core'
 import styled from 'styled-components'
+import { Box, Button, InputBase } from '@material-ui/core'
 
 export default function Comment() {
     const [comment, setComment] = useState('')

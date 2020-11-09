@@ -1,8 +1,9 @@
 import React from 'react'
-import { Box } from '@material-ui/core'
 import styled from 'styled-components'
+import { Box } from '@material-ui/core'
 import Suggestion from './Suggestion'
 import FeedProfile from './FeedProfile'
+import { user, suggestUser } from './mockup'
 import useWindowSize from '../../hooks/useWindowSize'
 import useScrollPosition from '../../hooks/useScrollPosition'
 
@@ -28,35 +29,6 @@ export default function Suggestions() {
         </SuggestionWrapper>
     )
 }
-
-const user = {
-    name: 'lllukkeddd',
-    url: 'https://picsum.photos/100/100/?random=1',
-}
-
-const suggestUser = [
-    {
-        name: 'ASDasdf',
-        url: 'https://picsum.photos/100/100/?random=',
-        followed: 'Followed by evelismm + 29 more'
-    }, {
-        name: 'Jevan',
-        url: 'https://picsum.photos/100/100/?random=',
-        followed: 'Followed by evelismm + 29 more'
-    }, {
-        name: 'heiasfk',
-        url: 'https://picsum.photos/100/100/?random=',
-        followed: 'Followed by evelismm + 29 more'
-    }, {
-        name: 'heiasfk',
-        url: 'https://picsum.photos/100/100/?random=',
-        followed: 'Followed by evelismm + 29 more'
-    }, {
-        name: 'heiasfk',
-        url: 'https://picsum.photos/100/100/?random=',
-        followed: 'Followed by evelismm + 29 more'
-    },
-]
 
 const SuggestionWrapper = styled(Box)`
     height: 100vh;
