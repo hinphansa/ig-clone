@@ -6,7 +6,11 @@ export default function FeedProfile(props) {
     return (
         <Wrapper>
             <img src={props.user.url} className='img' alt='suggest-profile' />
-            <Box className='username'>{props.user.name}</Box>
+            <Box className='username'>
+                <Box style={{ cursor: 'pointer' }}>
+                    {props.user.name}
+                </Box>
+            </Box>
             <Box className='account'>Switch</Box>
         </Wrapper>
     )
@@ -22,6 +26,7 @@ const Wrapper = styled(Box)`
     .img {
         width: 56px;
         height: 56px;
+        cursor: pointer;
         border-radius: 50%;
     }
 

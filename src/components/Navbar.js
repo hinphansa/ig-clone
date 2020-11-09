@@ -25,7 +25,7 @@ export default function Navbar() {
         ? <React.Fragment>
             <SearchIcon className={classes.searchIcon} />
             <InputBase placeholder='Search...' className={classes.input} />
-            <CancelIcon className={classes.searchIcon} onClick={() => setSearching(!searching)} />
+            <CancelIcon className={classes.searchIcon} onClick={() => setSearching(!searching)} style={{ cursor: 'pointer' }} />
         </React.Fragment>
         : <div className={classes.inputCover} onClick={() => setSearching(!searching)}>
             <div style={{ display: 'flex' }}>
@@ -40,7 +40,7 @@ export default function Navbar() {
             <Box className={classes.container} style={{ borderColor: `${theme.palette.primary.main}` }}>
                 <Box className={classes.center}>
                     <Box className={classes.logoWrapper}>
-                        <img src={textLogo} alt='Text Logo' style={{ height: 29, marginTop: 8 }} />
+                        <img src={textLogo} alt='Text Logo' style={{ height: 29, marginTop: 8, cursor: 'pointer' }} />
                     </Box>
 
                     <Box className={classes.searchWrapper} style={{ borderColor: `${theme.palette.primary.main}` }}>
@@ -71,9 +71,7 @@ export default function Navbar() {
                                     : <FavoriteOutlinedIcon className={classes.etcIcon} onClick={() => setIcon(3)} />
                             }
 
-                            <a href="/#">
-                                <Avatar className={classes.profileIcon} src='https://instagram.fbkk7-2.fna.fbcdn.net/v/t51.2885-19/s150x150/83145213_207820283683810_6839710134407528448_n.jpg?_nc_ht=instagram.fbkk7-2.fna.fbcdn.net&_nc_ohc=L7y7AB8e1UgAX_Qs9Wm&oh=ca9d55f90476b941517f78b53c8035cf&oe=5FCDFDDB' />
-                            </a>
+                            <Avatar className={classes.profileIcon} src='https://instagram.fbkk7-2.fna.fbcdn.net/v/t51.2885-19/s150x150/83145213_207820283683810_6839710134407528448_n.jpg?_nc_ht=instagram.fbkk7-2.fna.fbcdn.net&_nc_ohc=L7y7AB8e1UgAX_Qs9Wm&oh=ca9d55f90476b941517f78b53c8035cf&oe=5FCDFDDB' />
                         </Box>
                     </Box>
                 </Box>
@@ -173,5 +171,6 @@ const useStyles = makeStyles({
         width: 23,
         height: 23,
         marginLeft: 20,
+        cursor: 'pointer',
     }
 });

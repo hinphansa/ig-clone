@@ -30,12 +30,14 @@ const SuggestionWrapper = styled(Box)`
     img {
         width: 36px;
         height: 36px;
+        cursor: pointer;
         border-radius: 50%;
     }
 
     .text-wrapper {
         width: 100%;
         display: flex;
+        align-items: center;
         justify-content: space-between;
     }
 
@@ -46,6 +48,7 @@ const SuggestionWrapper = styled(Box)`
     }
 
     .name {
+        cursor: pointer;
         font-size: 14px;
         font-weight: bold;
     }
@@ -58,5 +61,6 @@ const SuggestionWrapper = styled(Box)`
         color: #0095f6;
         cursor: pointer;
         font-weight: bold;
+        /* line-height: 48px; */
     }
 `
