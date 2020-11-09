@@ -1,10 +1,10 @@
 import React from 'react'
 import { Box } from '@material-ui/core'
 import styled from 'styled-components'
-import FeedProfile from './FeedProfile'
-import useScrollPosition from '../hooks/useScrollPosition'
-import useWindowSize from '../hooks/useWindowSize'
 import Suggestion from './Suggestion'
+import FeedProfile from './FeedProfile'
+import useWindowSize from '../../hooks/useWindowSize'
+import useScrollPosition from '../../hooks/useScrollPosition'
 
 export default function Suggestions() {
     const scroll = useScrollPosition();

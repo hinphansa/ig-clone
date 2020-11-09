@@ -18,7 +18,6 @@ export default function App() {
         <Route path="/">
           <Navbar />
           <NewsFeed />
-          {/* <div style={{ height: 8000 }}></div> */}
         </Route>
       </Switch>
     </Router >
