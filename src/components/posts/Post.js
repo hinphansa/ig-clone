@@ -30,7 +30,6 @@ export default function Post(props) {
                     naturalSlideWidth={100}
                     naturalSlideHeight={100}
                     totalSlides={3}
-                    dragEnabled={false}
                     touchEnabled={false}
                 >
                     <Slider>
