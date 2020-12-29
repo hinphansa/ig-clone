@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Avatar, Box, createMuiTheme, InputBase, makeStyles, MuiThemeProvider } from '@material-ui/core';
+import { Box, createMuiTheme, InputBase, makeStyles, MuiThemeProvider } from '@material-ui/core';
 
 import textLogo from '../asset/text-logo.png'
 import SearchIcon from '@material-ui/icons/Search';
@@ -14,6 +14,7 @@ import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
 import ExploreOutlinedIcon from '@material-ui/icons/ExploreOutlined';
 import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteBorder';
+import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 
 export default function Navbar() {
     const [icon, setIcon] = useState(0)
@@ -71,7 +72,7 @@ export default function Navbar() {
                                     : <FavoriteOutlinedIcon className={classes.etcIcon} onClick={() => setIcon(3)} />
                             }
 
-                            <Avatar className={classes.profileIcon} src='https://instagram.fbkk7-2.fna.fbcdn.net/v/t51.2885-19/s150x150/83145213_207820283683810_6839710134407528448_n.jpg?_nc_ht=instagram.fbkk7-2.fna.fbcdn.net&_nc_ohc=L7y7AB8e1UgAX_Qs9Wm&oh=ca9d55f90476b941517f78b53c8035cf&oe=5FCDFDDB' />
+                            <AccountCircleOutlinedIcon className={classes.profileIcon} />
                         </Box>
                     </Box>
                 </Box>
@@ -168,8 +169,8 @@ const useStyles = makeStyles({
         cursor: 'pointer',
     },
     profileIcon: {
-        width: 23,
-        height: 23,
+        width: 26,
+        height: 26,
         marginLeft: 20,
         cursor: 'pointer',
     }
