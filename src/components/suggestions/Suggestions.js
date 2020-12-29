@@ -23,7 +23,7 @@ export default function Suggestions() {
             </SuggestionHeader>
             {
                 suggestUser.map((user, index) =>
-                    <Suggestion user={user} index={index}></Suggestion>
+                    <Suggestion user={user} index={index} key={`suggestion-${index}`} />
                 )
             }
         </SuggestionWrapper>

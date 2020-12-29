@@ -11,7 +11,6 @@ import NewsFeed from "./components/NewsFeed";
 
 
 export default function App() {
-  console.log('eiei', document.documentElement.clientWidth);
   return (
     <Router>
       <Switch>

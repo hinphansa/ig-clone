@@ -5,25 +5,25 @@ const user = {
 
 const suggestUser = [
     {
-        name: 'ASDasdf',
+        name: 'hiinnn',
         url: 'https://picsum.photos/100/100/?random=',
         followed: 'Followed by evelismm + 29 more'
     }, {
         name: 'Jevan',
         url: 'https://picsum.photos/100/100/?random=',
-        followed: 'Followed by evelismm + 29 more'
+        followed: 'Followed by Keith + 2 more'
     }, {
-        name: 'heiasfk',
+        name: 'Lillllia',
         url: 'https://picsum.photos/100/100/?random=',
-        followed: 'Followed by evelismm + 29 more'
+        followed: 'Followed by elocin + 13 more'
     }, {
-        name: 'heiasfk',
+        name: 'azhley_123',
         url: 'https://picsum.photos/100/100/?random=',
-        followed: 'Followed by evelismm + 29 more'
+        followed: 'Followed by evelismm + 9 more'
     }, {
-        name: 'heiasfk',
+        name: 'hiimdone',
         url: 'https://picsum.photos/100/100/?random=',
-        followed: 'Followed by evelismm + 29 more'
+        followed: 'Followed by ejamam + 29 more'
     },
 ]
 

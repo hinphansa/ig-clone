@@ -34,11 +34,14 @@ export default function Post(props) {
                 >
                     <Slider>
                         {
-                            props.post.post.url.map((url, index) =>
-                                <Slide index={index} key={`post-media-${index}`}>
-                                    <Image className={classes.media} src={`${url + index}`} alt={`${url + index}`} />
-                                </Slide>
-                            )
+                            props.post.post.url.map((url, index) => {
+                                return (
+                                    <Slide index={index} key={`post-media-${index}`}>
+                                        <Image className={classes.media} src={`${url + index}`} alt={`${url + index}`} />
+                                    </Slide>
+
+                                )
+                            })
                         }
                     </Slider>
                     <Box className={classes.buttonWrapper}>
